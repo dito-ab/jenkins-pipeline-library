@@ -77,7 +77,7 @@ spec:
     case "superbuilder":
       podTemplate(name: podLabel,
         label: podLabel,
-        namespace: "default",
+        namespace: "jenkins",
         yaml: """
 apiVersion: v1
 kind: Pod
@@ -87,15 +87,15 @@ metadata:
 spec:
   securityContext:
     privileged: true
-    runAsUser: 0
-    fsGroup: 0
+    runAsUser: 1000
+    fsGroup: 1000
   containers:
     - name: jnlp
       image: jenkins/jnlp-slave:alpine
       securityContext:
         privileged: true
-        runAsUser: 0
-        fsGroup: 0
+        runAsUser: 1000
+        fsGroup: 1000
       tty: true
       volumeMounts:
         - name: dockersock
