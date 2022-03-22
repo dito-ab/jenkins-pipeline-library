@@ -116,8 +116,8 @@ spec:
           mountPath: "/tmp"
       securityContext:
         privileged: true
-        runAsUser: 0
-        fsGroup: 0
+        runAsUser: 1000
+        fsGroup: 1000
       command:
       - cat
       tty: true
