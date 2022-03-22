@@ -38,7 +38,7 @@ spec:
           cpu: 2000m
           memory: 2Gi
   nodeSelector:
-    kops.k8s.io/instancegroup: nodes
+    kubernetes.io/os: linux
 """ ){ node(podLabel) { body() } }
       break
 
@@ -69,7 +69,7 @@ spec:
         requests:
           cpu: 200m
   nodeSelector:
-    kops.k8s.io/instancegroup: nodes
+    kubernetes.io/os: linux
 """ ){ node(podLabel) { body() } }
       break
 
