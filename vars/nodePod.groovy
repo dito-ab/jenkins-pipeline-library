@@ -140,7 +140,7 @@ spec:
       path: /home/jenkins/workspace/${env.JOB_NAME}
       mode: 777
   nodeSelector:
-    kops.k8s.io/instancegroup: nodes
+    kubernetes.io/os: linux
 """ ){ node(podLabel) { body() } }
       break
 
